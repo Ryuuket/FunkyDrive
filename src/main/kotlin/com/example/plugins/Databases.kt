@@ -9,14 +9,15 @@ import java.sql.*
 import kotlinx.coroutines.*
 
 fun Application.configureDatabases() {
-    val dbConnection: Connection = connectToPostgres(embedded = true)
-    val cityService = CityService(dbConnection)
+    val isDevMode = environment.developmentMode;
+    val dbConnection: Connection = connectToPostgres(embedded = isDevMode);
+    val cityService = CityService(dbConnection);
     routing {
         // Create city
         post("/cities") {
-            val city = call.receive<City>()
-            val id = cityService.create(city)
-            call.respond(HttpStatusCode.Created, id)
+            val city = call.receive<City>();
+            val id = cityService.create(city);
+            call.respond(HttpStatusCode.Created, id);
         }
         // Read city
         get("/cities/{id}") {

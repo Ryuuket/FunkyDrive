@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  back:
+    build: ./
+    ports:
+      - "3000:8080"
+    volumes:
+      - ./src:/app/src
+
+  postgres_db:
+    container_name: postgres_db
+    image: postgres:latest
+    restart: always
+    env_file:
+      - ./postgres.env
+    ports:
+      - "5433:5432"
+
+  adminer:
+    container_name: adminer_funky_drive
+    image: adminer:latest
+    restart: always
+    ports:
+      - "8180:8080"
+    env_file:
+      - ./adminer.env
+    depends_on:
+      - postgres_db
+
+volumes:
+  postgres-data:
