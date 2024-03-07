@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Dev mode" type="JetRunConfigurationType">
+    <envs>
+      <env name="POSTGRES_URL" value="localhost" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.example.ApplicationKt" />
+    <module name="com.example.funkydrive.main" />
+    <option name="PROGRAM_PARAMETERS" value="-t" />
+    <shortenClasspath name="NONE" />
+    <option name="VM_PARAMETERS" value="-Dio.ktor.development=true" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
