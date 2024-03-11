@@ -2,6 +2,7 @@ val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
 
+
 val postgres_version: String by project
 val h2_version: String by project
 plugins {
@@ -26,6 +27,8 @@ repositories {
 
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
+    implementation("io.ktor:ktor-server-freemarker:$ktor_version")
+    implementation("io.ktor:ktor-server-html-builder:$ktor_version")
     implementation("io.ktor:ktor-server-swagger-jvm")
     implementation("io.ktor:ktor-server-openapi")
     implementation("io.ktor:ktor-server-host-common-jvm")

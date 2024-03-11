@@ -14,8 +14,9 @@ fun Application.configureTemplating() {
         templateLoader = ClassTemplateLoader(this::class.java.classLoader, "templates")
     }
     routing {
-        get("/html-freemarker") {
+        get("/register") {
             call.respond(FreeMarkerContent("index.ftl", mapOf("data" to IndexData(listOf(1, 2, 3))), ""))
+
         }
         get("/home") {
             val data = mapOf("message" to "Welcome to Funky-drive home page!")
