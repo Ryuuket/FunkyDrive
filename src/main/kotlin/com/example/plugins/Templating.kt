@@ -19,7 +19,8 @@ fun Application.configureTemplating() {
         }
         get("/home") {
             val data = mapOf("message" to "Welcome to Funky-drive home page!")
-            call.respond(FreeMarkerContent("home.ftl",data, ""))
+            call.respond(FreeMarkerContent("home.ftl", data, ""))
+        }
         get("/login") {
             call.respond(FreeMarkerContent("login.ftl", mapOf("error" to "none"), ""))
         }
