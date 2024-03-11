@@ -16,9 +16,9 @@
     form {
         display: flex;
         flex-flow: column;
-        width: 300px;
+        width: 296px;
         margin: 0 auto;
-        margin-bottom: 20px;
+        padding: 2px;
     }
 
     form input {
@@ -39,9 +39,24 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        margin-top: 5px;
     }
 
     form button:hover {
         background-color: #45a049;
+    }
+
+    form p {
+        color: red;
+    }
+
+    @media only screen and (max-width: 300px) {
+        form {
+                width: 100%;
+        }
+
+        body h2{
+            font-size: 10vw;
+        }
     }
 </style>
