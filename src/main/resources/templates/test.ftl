@@ -2,20 +2,9 @@
 body {
   background-color: #E4CCFE ;
 }
-
-/* Title Section */
-.title h1 {
-background: radial-gradient(circle, rgba(140,183,212,1) 60%, rgba(14,66,111,1) 100%);
-  text-align: center;
-  padding: 20px; /* Add padding for better spacing */
-  font-size: 3em; /* Use em for responsive sizing */
-  color: white;
-  border: 3px solid #fff; /* Change border color to white */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
-}
-
 /*description section*/
 .description {
+  width: 60%;
   margin: 50px auto;
   padding: 20px;
   border: 3px solid #2980B9;
@@ -36,7 +25,7 @@ background: radial-gradient(circle, rgba(140,183,212,1) 60%, rgba(14,66,111,1) 1
 
 /* Choice Section */
 .choice {
-  width: 50%;
+  width: 20%;
   margin: 50px auto; /* Adjust margins for better positioning */
   padding: 20px; /* Consistent padding */
   border: 3px solid #2980B9;
@@ -62,7 +51,6 @@ background: radial-gradient(circle, rgba(140,183,212,1) 60%, rgba(14,66,111,1) 1
 .button2 button {
   width: 100%;
   padding: 15px 20px;
-  font-size: 1em;
   color: white;
   border-radius: 5px;
   cursor: pointer;
