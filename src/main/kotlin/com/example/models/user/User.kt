@@ -15,3 +15,9 @@ data class CreateUserDto(
     val email: String,
     val password: String
 )
+
+@Serializable
+data class LoginRequestDto(
+    val email: String,
+    val password: String
+)

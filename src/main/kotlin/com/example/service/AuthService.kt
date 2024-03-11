@@ -1,8 +1,11 @@
 package com.example.service
 
 import com.example.models.user.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import java.sql.Connection
 import java.sql.PreparedStatement
+import java.sql.SQLException
 import java.sql.Statement
 import java.util.UUID
 
@@ -10,10 +13,11 @@ class AuthService(private val connection: Connection) {
 
     companion object {
         private const val CREATE_TABLE_USERS =
-            "CREATE TABLE IF NOT EXISTS users (id UUID PRIMARY KEY, email VARCHAR(255), password VARCHAR(255));"
+
+            "CREATE TABLE IF NOT EXISTS USERS (ID SERIAL PRIMARY KEY, EMAIL VARCHAR(255), PASSWORD VARCHAR(255));"
 
         private const val INSERT_USER =
-            "INSERT INTO users ( email, password) VALUES ( ?, ?, ?) RETURNING id;"
+            "INSERT INTO users ( email, password) VALUES (  ?, ?)"
 
         private const val SELECT_USER_BY_USERNAME_PASSWORD =
             "SELECT id FROM auth WHERE username = ? AND password = ?;"
@@ -31,9 +35,20 @@ class AuthService(private val connection: Connection) {
     }
 
     // create new user
-    suspend fun createUser(user: CreateUserDto): String {
-        insertUser(user)
-        return "UserId"
+
+
+    suspend fun createUser(user: CreateUserDto): Int = withContext(Dispatchers.IO) {
+        val statement = connection.prepareStatement(INSERT_USER, Statement.RETURN_GENERATED_KEYS)
+        statement.setString(1, user.email)
+        statement.setString(2, user.password)
+        statement.executeUpdate()
+
+        val generatedKeys = statement.generatedKeys
+        if (generatedKeys.next()) {
+            return@withContext generatedKeys.getInt(1)
+        } else {
+            throw SQLException("Unable to retrieve the id of the newly inserted article")
+        }
     }
     private fun insertUser(user: CreateUserDto): Int {
         val statement = prepareStatement(INSERT_USER)
