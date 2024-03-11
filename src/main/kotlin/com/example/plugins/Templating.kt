@@ -11,10 +11,13 @@ fun Application.configureTemplating() {
         templateLoader = ClassTemplateLoader(this::class.java.classLoader, "templates")
     }
     routing {
-        get("/html-freemarker") {
+        get("/register") {
             call.respond(FreeMarkerContent("index.ftl", mapOf("data" to IndexData(listOf(1, 2, 3))), ""))
+
         }
-    }
-}
+
+                }
+            }
+
 
 data class IndexData(val items: List<Int>)
