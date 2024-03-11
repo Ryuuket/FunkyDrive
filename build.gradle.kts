@@ -41,6 +41,9 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:$logback_version")
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+    implementation("org.jetbrains.exposed:exposed-core:0.38.1")
+    implementation("org.jetbrains.exposed:exposed-dao:0.38.1")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.38.1")
 }
 
 tasks.jar {

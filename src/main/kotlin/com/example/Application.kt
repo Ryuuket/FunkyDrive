@@ -13,8 +13,7 @@ fun main() {
 fun Application.module() {
     configureHTTP()
     configureSerialization()
-    configureDatabases()
     configureSecurity()
     configureTemplating()
-    configureRouting()
+    configureRouting(dbConnection = connectToPostgres(embedded = false))
 }
