@@ -15,5 +15,5 @@ fun Application.module() {
     configureSerialization()
     configureSecurity()
     configureTemplating()
-    configureRouting()
+    configureRouting(dbConnection = connectToPostgres(embedded = false))
 }
