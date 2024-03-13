@@ -15,7 +15,7 @@ fun Application.configureTemplating() {
     }
     routing {
         get("/register") {
-            call.respond(FreeMarkerContent("index.ftl", mapOf("data" to IndexData(listOf(1, 2, 3))), ""))
+            call.respond(FreeMarkerContent("register.ftl", mapOf("data" to IndexData(listOf(1, 2, 3))), ""))
 
         }
         get("/home") {
