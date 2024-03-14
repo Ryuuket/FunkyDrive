@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Prod mode" type="JetRunConfigurationType">
-    <option name="MAIN_CLASS_NAME" value="com.example.ApplicationKt" />
+    <option name="MAIN_CLASS_NAME" value="com.example.com.example.models.ApplicationKt" />
     <module name="com.example.funkydrive.main" />
     <option name="PROGRAM_PARAMETERS" value="-t" />
     <shortenClasspath name="NONE" />

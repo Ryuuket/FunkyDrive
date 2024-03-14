@@ -9,7 +9,7 @@
     </header>
     <div class ="description">
           <h2> What is Funky-drive ? </h2>
-          <p>Funky-drive is a cloud storage service that allows you to store your files and access them from anywhere. </p>
+          <p>Funky-drive is a cloud storage com.example.service that allows you to store your files and access them from anywhere. </p>
     </div>
              <div class ="choice">
             <h3> Sign Up or Login </h2>

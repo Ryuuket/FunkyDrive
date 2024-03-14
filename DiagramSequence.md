@@ -15,7 +15,7 @@ sequenceDiagram
     else The email is unique
         DB->>S: Unique email confirmed
         S->>S: Hash the password
-        S->>DB: Create new user with username, experience level, and climate
+        S->>DB: Create new com.example.user with username, experience level, and climate
         DB->>S: User creation confirmation
         S->>UI: User created successfully
         UI->>U: Display account creation success
