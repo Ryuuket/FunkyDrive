@@ -1,8 +1,8 @@
-package plugins
+package com.example.plugins
 
+import com.example.service.AuthService
 import com.example.user.CreateUserDto
 import com.example.user.LoginRequestDto
-import com.example.service.AuthService
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
