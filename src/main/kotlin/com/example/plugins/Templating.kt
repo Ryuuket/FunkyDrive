@@ -41,10 +41,10 @@ fun Application.configureTemplating(connection: Connection) {
                 status = HttpStatusCode.BadRequest
             )
 
-            // Check if the com.example.user exists in the database
+            // Check if the com.example.com.example.user exists in the database
             val user = withContext(Dispatchers.IO) { authService.authenticateUser(email, password) }
 
-            // If the com.example.user exists, respond with a successful login message with the com.example.user ID
+            // If the com.example.com.example.user exists, respond with a successful login message with the com.example.com.example.user ID
             if (user != null) {
                 println("User logged in with ID: $user")
                 call.respond(HttpStatusCode.OK, "User logged in with ID: $user")
