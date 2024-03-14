@@ -21,6 +21,7 @@ fun Application.configureTemplating(connection: Connection) {
         get("/register") {
             call.respond(FreeMarkerContent("register.ftl", mapOf("data" to IndexData(listOf(1, 2, 3))), ""))
         }
+        
         get("/home") {
             val data = mapOf("message" to "Welcome to Funky-drive home page!")
             call.respond(FreeMarkerContent("home.ftl", data, ""))
