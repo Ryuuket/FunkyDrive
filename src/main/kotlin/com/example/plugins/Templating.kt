@@ -1,5 +1,6 @@
-package plugins
+package com.example.plugins
 
+import com.example.service.AuthService
 import freemarker.cache.ClassTemplateLoader
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -9,7 +10,6 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import com.example.service.AuthService
 import java.sql.Connection
 
 fun Application.configureTemplating(connection: Connection) {

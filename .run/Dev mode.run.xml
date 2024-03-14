@@ -3,7 +3,7 @@
     <envs>
       <env name="test" value="jdbc:postgresql://localhost:5432/Database" />
     </envs>
-    <option name="MAIN_CLASS_NAME" value="MainKt" />
+    <option name="MAIN_CLASS_NAME" value="com.example.ApplicationKt" />
     <module name="com.example.funkydrive.main" />
     <option name="PROGRAM_PARAMETERS" value="-t" />
     <shortenClasspath name="NONE" />

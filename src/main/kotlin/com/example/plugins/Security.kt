@@ -1,4 +1,4 @@
-package plugins
+package com.example.plugins
 
 import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
