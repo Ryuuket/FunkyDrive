@@ -1,13 +1,13 @@
 package com.example.service
 
-import com.example.models.user.*
+import com.example.user.CreateUserDto
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.sql.Connection
 import java.sql.PreparedStatement
 import java.sql.SQLException
 import java.sql.Statement
-import java.util.UUID
+import java.util.*
 
 class AuthService(private val connection: Connection) {
 
@@ -34,7 +34,7 @@ class AuthService(private val connection: Connection) {
         statement.executeUpdate(CREATE_TABLE_USERS)
     }
 
-    // create new user
+    // create new com.example.user
 
 
     suspend fun createUser(user: CreateUserDto): Int = withContext(Dispatchers.IO) {
@@ -54,15 +54,15 @@ class AuthService(private val connection: Connection) {
         val statement = prepareStatement(INSERT_USER)
         statement.setString(1, user.email)
         statement.setString(2, user.password)
-//        statement.setDate(3, user.createdAt)
-//        statement.setDate(4, user.dateUpdate)
+//        statement.setDate(3, com.example.user.createdAt)
+//        statement.setDate(4, com.example.user.dateUpdate)
         val resultSet = statement.executeQuery()
         resultSet.next()
         return 0
     }
 
 
-    // authenticate user
+    // authenticate com.example.user
     suspend fun authenticateUser(username: String, password: String): UUID? {
         val statement = prepareStatement(SELECT_USER_BY_USERNAME_PASSWORD)
         statement.setString(1, username)
@@ -75,7 +75,7 @@ class AuthService(private val connection: Connection) {
         }
     }
 
-    // delete user
+    // delete com.example.user
     suspend fun deleteUser(userId: Int): Boolean {
         val statement = prepareStatement(DELETE_USER)
         statement.setInt(1, userId)

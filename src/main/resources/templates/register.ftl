@@ -1,4 +1,5 @@
 <html>
+
 <#include "css/registercss.ftl">
      <title>Driver Application - Authentication</title>
 <body>
@@ -40,6 +41,7 @@
 
 
     </div>
+
     </form>
 </body>
 </html>
