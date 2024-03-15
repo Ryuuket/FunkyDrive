@@ -15,9 +15,6 @@ fun Application.configureRouting(dbConnection: Connection) {
     val authService = AuthService(dbConnection)
 
     routing {
-        get("/") {
-            call.respondText("Hello World!")
-        }
 
         post("/register") {
             val user = call.receive<CreateUserDto>()
