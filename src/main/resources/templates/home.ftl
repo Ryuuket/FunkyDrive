@@ -1,7 +1,6 @@
 <html>
 <head>
-    <#include  "/style/header_css.ftl">
-    <#include  "/style/home_css.ftl">
+    <#include  "/style/home.css">
     <title> Home Page </title>
 </head>
 <body>
