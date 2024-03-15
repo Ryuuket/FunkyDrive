@@ -1,9 +1,12 @@
 <html>
     <head>
-        <#include "register_css.ftl">
+        <#include "/style/register_css.ftl">
         <title>Driver Application - Authentication</title>
     </head>
     <body>
+        <header>
+               <#include "/components/header.ftl">
+        </header>
         <div class="form-header">
             <h1>Register</h1>
         </div>

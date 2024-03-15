@@ -20,18 +20,19 @@ fun Application.configureTemplating(connection: Connection) {
     }
     val authService = AuthService(connection)
     routing {
-
-        get("/register") {
-            call.respond(FreeMarkerContent("register.ftl", mapOf("error" to "none"), ""))
-        }
-
-        get("/home") {
-            val data = mapOf("message" to "Welcome to Funky-drive home page!")
+        get("/") {
+            val data = mapOf("message" to "Welcome to Funky-drive home page!", "error" to "none")
             call.respond(FreeMarkerContent("home.ftl", data, ""))
         }
 
+        get("/register") {
+            val data = mapOf("message" to "Do you want to register for Funky-drive?", "error" to "none")
+            call.respond(FreeMarkerContent("register.ftl", data, ""))
+        }
+
         get("/login") {
-            call.respond(FreeMarkerContent("login.ftl", mapOf("error" to "none"), ""))
+            val data = mapOf("message" to "Do you want to login for Funky-drive?", "error" to "none")
+            call.respond(FreeMarkerContent("login.ftl", data, ""))
         }
 
         post("/login") {
@@ -102,11 +103,9 @@ fun Application.configureTemplating(connection: Connection) {
             val user = withContext(Dispatchers.IO) { authService.createUser(CreateUserDto(mail, pwd)) }
 
             println("User registered with ID: $user")
-            call.respondRedirect("/home")
+            call.respondRedirect("/")
         }
-
     }
-
 }
 
 

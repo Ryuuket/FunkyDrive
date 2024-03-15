@@ -4,6 +4,9 @@
     <#include "style/login.ftl">
 </head>
 <body>
+    <header>
+       <#include "/components/header.ftl">
+    </header>
     <h2>Authentication</h2>
     <form action="/login" method="post">
         <label for="email">mail:</label>
