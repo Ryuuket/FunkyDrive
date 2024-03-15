@@ -1,6 +1,6 @@
 <html>
     <head>
-        <#include "/style/register_css.ftl">
+        <#include "/style/register.css">
         <title>Driver Application - Authentication</title>
     </head>
     <body>
